@@ -1,7 +1,9 @@
 import pandas as pd
 from sklearn.ensemble import ExtraTreesClassifier
-#import pickle
-from sklearn.externals import joblib 
+from sklearn.externals import joblib
+
+#How to create the model of machine learning for the trained_titanic.py, you dont need to run this file
+#since the model is saved on the .pkl file
 
 data = pd.read_csv("titanic.csv")
 data = data.set_index("PassengerId")
@@ -17,9 +19,8 @@ Y_data = data['Survived']
 decision_tree = ExtraTreesClassifier()
 decision_tree.fit(X_data, Y_data)
 
-X_test = [[1,1,1,1,0,899,0]]
+#X_test = [[1,1,1,1,0,899,0]]
+#prediction = decision_tree.predict_proba(X_test)
 
-prediction = decision_tree.predict_proba(X_test)
-#saved_model = pickle.dumps(decision_tree) 
 joblib.dump(decision_tree, 'saved_model.pkl')
  

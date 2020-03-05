@@ -2,7 +2,7 @@ from sklearn.externals import joblib
 from os import system
 import re
 
-#import pandas as pd
+#Run this file to check your chances of survival after introducing a few fields of data!
 
 columns= ['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare', 'Embarked']
 X_test = [[0,0,0,0,0,0,0]]
